@@ -1,0 +1,476 @@
+/* ----------------------------------------Toggle Theme Button Start---------------------------------------- */
+
+/* @import url("https://fonts.googleapis.com/css?family=Nunito:800i&display=swap"); */
+
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  background: #fffcc1;
+} */
+
+/* * {
+  box-sizing: inherit;
+} */
+
+.wrapper {
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#hide-checkbox {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.toggle {
+  /* position: relative; */
+  /* display: inline-block; */
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  background: #211042;
+  border-radius: 25px;
+  transition: 500ms;
+  /* overflow: hidden; */
+}
+
+.toggle-button {
+  /* position: absolute; */
+  /* display: inline-block; */
+  top: 3.5px;
+  left: 3px;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #faeaf1;
+  /* overflow: hidden; */
+  box-shadow: 0 0 17.5px 2px rgba(255, 255, 255);
+  transition: all 500ms ease-out;
+}
+
+.crater {
+  /* position: absolute; */
+  /* display: inline-block; */
+  background: #faeaf1;
+  border-radius: 50%;
+  transition: 500ms;
+}
+
+.crater-1 {
+  background: #fffff9;
+  width: 43px;
+  height: 43px;
+  left: 5px;
+  bottom: 5px;
+}
+
+.crater-2 {
+  width: 10px;
+  height: 10px;
+  top: -3.5px;
+  left: 22px;
+}
+
+.crater-3 {
+  width: 8px;
+  height: 8px;
+  top: 10px;
+  right: -2px;
+}
+
+.crater-4 {
+  width: 5px;
+  height: 5px;
+  top: 12px;
+  left: 15px;
+}
+
+.crater-5 {
+  width: 7.5px;
+  height: 7.5px;
+  top: 20px;
+  left: 24px;
+}
+
+.crater-6 {
+  width: 5px;
+  height: 5px;
+  top: 24px;
+  left: 10px;
+}
+
+.crater-7 {
+  width: 6px;
+  height: 6px;
+  bottom: 2.5px;
+  left: 17.5px;
+}
+
+.star {
+  /* position: absolute; */
+  /* display: inline-block; */
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0.5px 0 1px 1px rgba(255, 255, 255);
+}
+
+.star-1 {
+  width: 3px;
+  height: 3px;
+  right: 45px;
+  bottom: 20px;
+}
+
+.star-2 {
+  width: 4px;
+  height: 4px;
+  right: 35px;
+  top: 5px;
+}
+
+.star-3 {
+  width: 2.5px;
+  height: 2.5px;
+  right: 30px;
+  bottom: 7.5px;
+}
+
+.star-4 {
+  width: 1.5px;
+  height: 1.5px;
+  right: 20px;
+  bottom: 25px;
+}
+
+.star-5 {
+  width: 2px;
+  height: 2px;
+  right: 5px;
+  bottom: 17.5px;
+}
+
+.star-6,
+.star-7,
+.star-8 {
+  width: 5px;
+  height: 1px;
+  border-radius: 1px;
+  transform: rotate(-45deg);
+  box-shadow: 2.5px 0px 2px 0.5px #fff;
+  animation-name: travel;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.star-6 {
+  right: 15px;
+  bottom: 15px;
+  animation-delay: -2s;
+}
+
+.star-7 {
+  right: 25px;
+  bottom: 30px;
+}
+
+.star-8 {
+  right: 45px;
+  top: 5px;
+  animation-delay: -4s;
+}
+
+@keyframes travel {
+  0% {
+    transform: rotate(-45deg) translateX(70px);
+  }
+
+  50% {
+    transform: rotate(-45deg) translateX(-20px);
+    box-shadow: 2.5px 0px 3px 0.5px #fff;
+  }
+
+  100% {
+    transform: rotate(-45deg) translateX(-30px);
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
+#hide-checkbox:checked+.toggle {
+  background: #24d7f7;
+}
+
+#hide-checkbox:checked+.toggle .toggle-button {
+  background: yellow;
+  transform: translateX(51px);
+  box-shadow: 0 0 17.5px 2.5px rgb(255, 213, 0);
+}
+
+#hide-checkbox:checked+.toggle .toggle-button .crater {
+  transform: rotate(-45deg) translateX(35px);
+}
+
+#hide-checkbox:checked+.toggle .star {
+  animation: move 2s infinite;
+  transform: none;
+  box-shadow: none;
+}
+
+#hide-checkbox:checked+.toggle .star-1 {
+  width: 20px;
+  height: 5px;
+  border-radius: 5px;
+  background: #fff;
+  left: 10px;
+  top: 12.5px;
+  box-shadow: none;
+}
+
+#hide-checkbox:checked+.toggle .star-2 {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  left: 13px;
+  top: 11.5px;
+  box-shadow: -0.5px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked+.toggle .star-3 {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  left: 17.5px;
+  top: 9.5px;
+  box-shadow: -0.5px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked+.toggle .star-4 {
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  left: 23px;
+  top: 10.5px;
+  box-shadow: -0.5px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked+.toggle .star-5 {
+  width: 30px;
+  height: 7.5px;
+  border-radius: 7.5px;
+  background: #fff;
+  left: 15px;
+  bottom: 10px;
+  box-shadow: none;
+}
+
+#hide-checkbox:checked+.toggle .star-6 {
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border-radius: 50%;
+  left: 19px;
+  bottom: 10px;
+  box-shadow: -0.5px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked+.toggle .star-7 {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  left: 25.5px;
+  bottom: 10px;
+  box-shadow: -0.5px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked+.toggle .star-8 {
+  width: 10.5px;
+  height: 10.5px;
+  background: #fff;
+  border-radius: 50%;
+  left: 35px;
+  top: 29.5px;
+  box-shadow: -0.5px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+@keyframes move {
+  0% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+/* p {
+  text-align: center;
+  letter-spacing: 7.5px;
+  background: #34495e;
+  color: #fff;
+}
+
+p.morning {
+  background: #e67e22;
+} */
+/* ----------------------------------------Toggle Theme Button End---------------------------------------- */
+
+.Light-Theme {
+  --main-heading: ;
+  --bg-clr: #FCFFE7;
+  --font-clr: #222222;
+  --border-clr: #222222;
+  --card-clr: #FAFCEA;
+}
+
+.Dark-Theme {
+  --main-heading: ;
+  --bg-clr: #121212;
+  --font-clr: #FCFFE7;
+  --border-clr: #FCFFE7;
+  --card-clr: #242424;
+}
+
+:root {
+  --header-clr: #EB455F;
+  --footer-clr: #2B3467;
+  --cream: #FCFFE7;
+}
+
+.cream {
+  color: var(--cream) !important;
+}
+
+.gray {
+  color: var(--border-clr) !important;
+}
+
+body {
+  background-color: var(--bg-clr) !important;
+  transition: 1s;
+}
+
+table {
+  color: var(--font-clr) !important;
+  border-color: var(--border-clr) !important;
+}
+
+h2.Head {
+  color: var(--font-clr);
+  line-height: 70px;
+}
+
+.ltr-spcng-3 {
+  letter-spacing: 3px;
+}
+
+.App_wrapper,
+.loader-wrappepr {
+  min-height: 70vh;
+}
+
+nav.navbar {
+  background-color: var(--header-clr) !important;
+  transition: 1s;
+}
+
+form input {
+  background-color: var(--bg-clr) !important;
+  border: none !important;
+}
+
+.Author {
+  color: var(--header-clr);
+  /* text-shadow:2px 1px #FAFCEA; */
+}
+
+form label,
+.Home-content {
+  color: var(--font-clr) !important;
+}
+
+button.bttn {
+  background-color: var(--footer-clr) !important;
+}
+
+button.bttn:hover {
+  background-color: #202a66 !important;
+}
+
+footer {
+  background-color: var(--footer-clr);
+  color: var(--header-clr);
+}
+
+.table-bordered>:not(caption)>*>* {
+  border-width: 0 0px !important;
+}
+
+.brand-font,
+.App-link,
+.App-name,
+.wlcm,
+.Head {
+  /* font-family: 'Passions Conflict', cursive; */
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Sacramento', cursive;
+  /* font-weight: 900; */
+}
+
+.brdr {
+  border: 3px solid;
+}
+
+.cardd {
+  background-color: var(--card-clr) !important;
+  transition: 1s;
+  border: 0;
+  box-shadow: 0 2px 15px -3px rgb(0 0 0 / 7%), 0 10px 20px -2px rgb(0 0 0 / 4%);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, .125) !important;
+  background-clip: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+
+  .Lazy-Loader-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  /* width: 100%; */
+  pointer-events: none;
+}
+
+.Lazy-Loader-logo {
+  width: 5%;
+}
